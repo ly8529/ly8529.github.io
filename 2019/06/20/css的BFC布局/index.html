@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ccss BFC 模式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考博客：https://www.cnblogs.com/chen-cong/p/7862832.html #BFC模式 块级格式化上下文 创建了BFC元素就是一个独立的盒子，只有Block-level box 可以参加创建BFC，它规定了内部的Block-level box 如何布局，并且这个盒子的布局和外界互不影响。 #形成BFC的条件      1、浮动元素，float 除 none 以外的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ccss BFC 模式">
+<meta property="og:url" content="http://yoursite.com/2019/06/20/css的BFC布局/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="参考博客：https://www.cnblogs.com/chen-cong/p/7862832.html #BFC模式 块级格式化上下文 创建了BFC元素就是一个独立的盒子，只有Block-level box 可以参加创建BFC，它规定了内部的Block-level box 如何布局，并且这个盒子的布局和外界互不影响。 #形成BFC的条件      1、浮动元素，float 除 none 以外的">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-07T13:40:58.588Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ccss BFC 模式">
+<meta name="twitter:description" content="参考博客：https://www.cnblogs.com/chen-cong/p/7862832.html #BFC模式 块级格式化上下文 创建了BFC元素就是一个独立的盒子，只有Block-level box 可以参加创建BFC，它规定了内部的Block-level box 如何布局，并且这个盒子的布局和外界互不影响。 #形成BFC的条件      1、浮动元素，float 除 none 以外的">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css的BFC布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/20/css的BFC布局/" class="article-date">
+  <time datetime="2019-06-20T15:17:03.748Z" itemprop="datePublished">2019-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ccss BFC 模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考博客：<a href="https://www.cnblogs.com/chen-cong/p/7862832.html" target="_blank" rel="noopener">https://www.cnblogs.com/chen-cong/p/7862832.html</a></p>
+<p>#BFC模式 块级格式化上下文</p>
+<p>创建了BFC元素就是一个独立的盒子，只有Block-level box 可以参加创建BFC，它规定了内部的Block-level box 如何布局，并且这个盒子的布局和外界互不影响。</p>
+<p>#形成BFC的条件<br>      1、浮动元素，float 除 none 以外的值；<br>      2、定位元素，position（absolute，fixed）；<br>      3、display 为以下其中之一的值 inline-block，table-cell，table-caption；<br>      4、overflow 除了 visible 以外的值（hidden，auto，scroll）；</p>
+<p>#BFC的特性</p>
+<pre><code>1.内部的Box会在垂直方向上一个接一个的放置。
+2.垂直方向上的距离由margin决定。
+3.bfc的区域不会与float的元素区域重叠。
+4.计算bfc的高度时，浮动元素也参与计算。
+5.bfc就是页面上的一个独立容器，容器里面的子元素不会影响外面元素。</code></pre><p>#BFC实例</p>
+<p>####BFC中的盒子对齐<br>特性的第一条是：内部的Box会在垂直方向上一个接一个的放置。<br>浮动的元素也是这样，box3浮动，他依然接着上一个盒子垂直排列。并且所有的盒子都左对齐。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;box3&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;box4&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">css</span><br><span class="line">div &#123;</span><br><span class="line">        height: 20px;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .container &#123;</span><br><span class="line">        position: absolute;  /* 创建一个BFC环境*/</span><br><span class="line">        height: auto;</span><br><span class="line">        background-color: #eee;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .box1 &#123;</span><br><span class="line">        width: 400px;</span><br><span class="line">        background-color: red;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .box2 &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        background-color: green;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .box3 &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        background-color: yellow;</span><br><span class="line">        float: left;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .box4 &#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 30px;</span><br><span class="line">        background-color: purple;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>####外边距折叠</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">css代码</span><br><span class="line">.container &#123;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background-color: red;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .box1 &#123;</span><br><span class="line">        height: 20px;</span><br><span class="line">        margin: 10px 0;</span><br><span class="line">        background-color: green;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .box2 &#123;</span><br><span class="line">        height: 20px;</span><br><span class="line">        margin: 20px 0;</span><br><span class="line">        background-color: green;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>####不被浮动元素覆盖 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;column&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;column&quot;&gt;&lt;/div&gt;</span><br><span class="line">css代码</span><br><span class="line">.column:nth-of-type(1) &#123;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    margin-right: 10px;</span><br><span class="line">    background-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.column:nth-of-type(2) &#123;</span><br><span class="line">    overflow: hidden;/*创建bfc */</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: purple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>####还有三栏布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;contain&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;</span><br><span class="line">     &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;</span><br><span class="line">     &lt;div class=&quot;column&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> .column:nth-of-type(1),</span><br><span class="line">     .column:nth-of-type(2) &#123;</span><br><span class="line">         float: left;</span><br><span class="line">         width: 100px;</span><br><span class="line">         height: 300px;</span><br><span class="line">         background-color: green;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     .column:nth-of-type(2) &#123;</span><br><span class="line">         float: right;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     .column:nth-of-type(3) &#123;</span><br><span class="line">         overflow: hidden;  /*创建bfc*/</span><br><span class="line">         height: 300px;</span><br><span class="line">         background-color: red;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>####防止字体环绕</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</span><br><span class="line">   你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</span><br><span class="line">   你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">.left &#123;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    background-color: green;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>##扩展<br>*实现三格布局的五种方式，各优缺点，去掉高度考虑纵向的时候，还有那种方式适应，兼容性如何<br>1、float布局<br>2、绝对定位布局<br>3、flex布局<br>4、table布局<br>5、网格布局</p>
+<p>##扩展2<br>flex布局与网格布局的区别</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/20/css的BFC布局/" data-id="cjxt066d30000cjlbi14vprpl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/20/css网格布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css grid 布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/20/css的BFC布局/">ccss BFC 模式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/css网格布局/">css grid 布局</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/es6 笔记/">es6 笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
