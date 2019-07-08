@@ -7,17 +7,17 @@
   
   <title>css grid 布局 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考博客：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html #网格布局 flex布局相当于一维布局，grid相当于二维布局 #容器和项目    容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素 #容器的属性 ####1、display属性，可设置的值为grid，inline-grid 注意，设为网">
+  <meta name="description" content="参考博客：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html 网格布局flex布局相当于一维布局，grid相当于二维布局 容器和项目容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素容器的属性1、display属性，可设置的值为grid，inline-grid注意，设为网格布局以后，容器子元素（项目）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css grid 布局">
 <meta property="og:url" content="http://yoursite.com/2019/06/20/css网格布局/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="参考博客：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html #网格布局 flex布局相当于一维布局，grid相当于二维布局 #容器和项目    容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素 #容器的属性 ####1、display属性，可设置的值为grid，inline-grid 注意，设为网">
+<meta property="og:description" content="参考博客：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html 网格布局flex布局相当于一维布局，grid相当于二维布局 容器和项目容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素容器的属性1、display属性，可设置的值为grid，inline-grid注意，设为网格布局以后，容器子元素（项目）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-07T13:40:03.578Z">
+<meta property="og:updated_time" content="2019-07-08T14:54:23.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css grid 布局">
-<meta name="twitter:description" content="参考博客：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html #网格布局 flex布局相当于一维布局，grid相当于二维布局 #容器和项目    容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素 #容器的属性 ####1、display属性，可设置的值为grid，inline-grid 注意，设为网">
+<meta name="twitter:description" content="参考博客：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html 网格布局flex布局相当于一维布局，grid相当于二维布局 容器和项目容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素容器的属性1、display属性，可设置的值为grid，inline-grid注意，设为网格布局以后，容器子元素（项目）">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -87,18 +87,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>参考博客：<a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html</a></p>
-<p>#网格布局</p>
-<p>flex布局相当于一维布局，grid相当于二维布局</p>
-<p>#容器和项目<br>    容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素</p>
-<p>#容器的属性</p>
-<p>####1、display属性，可设置的值为grid，inline-grid</p>
-<pre><code>注意，设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。</code></pre><p>####2、grid-template-columns 属性，grid-template-rows 属性<br>    grid-template-columns 属性定义每一列的列宽，<br>    grid-template-rows 属性定义每一行的行高</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 100px 100px 100px;</span><br><span class="line">  grid-template-rows: 100px 100px 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="网格布局"><a href="#网格布局" class="headerlink" title="网格布局"></a>网格布局</h1><p>flex布局相当于一维布局，grid相当于二维布局</p>
+<h1 id="容器和项目"><a href="#容器和项目" class="headerlink" title="容器和项目"></a>容器和项目</h1><pre><code>容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素</code></pre><h1 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h1><h4 id="1、display属性，可设置的值为grid，inline-grid"><a href="#1、display属性，可设置的值为grid，inline-grid" class="headerlink" title="1、display属性，可设置的值为grid，inline-grid"></a>1、display属性，可设置的值为grid，inline-grid</h4><pre><code>注意，设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。</code></pre><h4 id="2、grid-template-columns-属性，grid-template-rows-属性"><a href="#2、grid-template-columns-属性，grid-template-rows-属性" class="headerlink" title="2、grid-template-columns 属性，grid-template-rows 属性"></a>2、grid-template-columns 属性，grid-template-rows 属性</h4><pre><code>grid-template-columns 属性定义每一列的列宽，
+grid-template-rows 属性定义每一行的行高</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 100px 100px 100px;</span><br><span class="line">  grid-template-rows: 100px 100px 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>或者是用百分比</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 33.33% 33.33% 33.33%;</span><br><span class="line">  grid-template-rows: 33.33% 33.33% 33.33%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>#####repeat()<br>1、repeat函数可以简化重复的值</p>
+<h5 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h5><p>1、repeat函数可以简化重复的值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: repeat(3, 33.33%);</span><br><span class="line">  grid-template-rows: repeat(3, 33.33%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>repeat()接受两个参数，第一个参数是重复的次数（上例是3），第二个参数是所要重复的值。<br>repeat()重复某种模式也是可以的。</p>
@@ -138,7 +134,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-columns: repeat(12, 1fr);</span><br></pre></td></tr></table></figure>
 
 <p>十二网格布局</p>
-<p>####3、grid-row-rap,grid-column,grid-gap 属性<br>grid-row属性设置行与行的间隔（行间距），grid-column-gap属性设置列与列的间隔（列间距）</p>
+<h4 id="3、grid-row-rap-grid-column-grid-gap-属性"><a href="#3、grid-row-rap-grid-column-grid-gap-属性" class="headerlink" title="3、grid-row-rap,grid-column,grid-gap 属性"></a>3、grid-row-rap,grid-column,grid-gap 属性</h4><p>grid-row属性设置行与行的间隔（行间距），grid-column-gap属性设置列与列的间隔（列间距）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  grid-row-gap: 20px;</span><br><span class="line">  grid-column-gap: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上述代码中，grid-row-gap用于设置行间距，grid-column-gap用于设置列间距</p>
@@ -150,7 +146,7 @@
 
 <p>如果grid-gap省略了第二个值，浏览器认为第二个值等于第一个值。</p>
 <p>根据最新标准，上面三个属性名的grid-前缀已经删除，grid-column-gap和grid-row-gap写成column-gap和row-gap，grid-gap写成gap。</p>
-<p>####4、grid-template-areas属性<br>网格布局允许制定”区域“，一个区域由单个或者多个单元格组成，该属性用于定义区域。</p>
+<h4 id="4、grid-template-areas属性"><a href="#4、grid-template-areas属性" class="headerlink" title="4、grid-template-areas属性"></a>4、grid-template-areas属性</h4><p>网格布局允许制定”区域“，一个区域由单个或者多个单元格组成，该属性用于定义区域。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 100px 100px 100px;</span><br><span class="line">  grid-template-rows: 100px 100px 100px;</span><br><span class="line">  grid-template-areas: &apos;a b c&apos;</span><br><span class="line">                       &apos;d e f&apos;</span><br><span class="line">                       &apos;g h i&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上述代码先划分出9个单元格，然后将其定名为a到i的九个区域，分别对应这九个单元格。</p>
@@ -165,17 +161,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">grid-template-areas: &apos;a . c&apos;</span><br><span class="line">                     &apos;d . f&apos;</span><br><span class="line">                     &apos;g . i&apos;;</span><br></pre></td></tr></table></figure>
 
 <p>注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。<br>比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。</p>
-<p>####5、grid-auto-flow 属性，设置元素的排列顺序<br>默认的放置顺序是“先行后列”</p>
+<h4 id="5、grid-auto-flow-属性，设置元素的排列顺序"><a href="#5、grid-auto-flow-属性，设置元素的排列顺序" class="headerlink" title="5、grid-auto-flow 属性，设置元素的排列顺序"></a>5、grid-auto-flow 属性，设置元素的排列顺序</h4><p>默认的放置顺序是“先行后列”</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grid-auto-flow: row;  //先行后列</span><br><span class="line">grid-auto-flow: column;   //先列后行</span><br></pre></td></tr></table></figure>
 
 <p>如下表示”先行后列”，并且尽可能紧密填满，尽量不出现空格。</p>
 <p>grid-auto-flow: row dense;</p>
-<p>#项目元素的属性</p>
-
+<h1 id="项目元素的属性"><a href="#项目元素的属性" class="headerlink" title="项目元素的属性"></a>项目元素的属性</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/20/css网格布局/" data-id="cjxt066d90001cjlbussf3h2x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/20/css网格布局/" data-id="cjxuicjv00001jplbe0eajp09" class="article-share-link">Share</a>
       
       
     </footer>
@@ -188,7 +183,7 @@
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ccss BFC 模式
+          css BFC 模式
         
       </div>
     </a>
@@ -233,7 +228,7 @@
       <ul>
         
           <li>
-            <a href="/2019/06/20/css的BFC布局/">ccss BFC 模式</a>
+            <a href="/2019/06/20/css的BFC布局/">css BFC 模式</a>
           </li>
         
           <li>
