@@ -62,6 +62,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/08/js原型链/" class="article-date">
+  <time datetime="2019-07-08T15:26:53.790Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/08/js原型链/">css 盒模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="css-盒模型"><a href="#css-盒模型" class="headerlink" title="css 盒模型"></a>css 盒模型</h1><p>css盒模型 分为标准模型和IE模型</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/08/js原型链/" data-id="cjxul00kt0002wdlbs7tbi6qu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-css的BFC布局" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/20/css的BFC布局/" class="article-date">
@@ -110,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/20/css的BFC布局/" data-id="cjxuicjuu0000jplb3kuhs4fw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/20/css的BFC布局/" data-id="cjxukvgb10000v4lb4dcqvjhv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -226,7 +263,182 @@ grid-template-rows 属性定义每一行的行高</code></pre><figure class="hig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/20/css网格布局/" data-id="cjxuicjv00001jplbe0eajp09" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/20/css网格布局/" data-id="cjxukvgb50001v4lbrk3sckmq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-DOM 事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/20/DOM 事件/" class="article-date">
+  <time datetime="2019-06-20T15:17:03.748Z" itemprop="datePublished">2019-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/20/DOM 事件/">DOM 事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><p>参考博客：<a href="https://www.jianshu.com/p/1eb41968c8e3" target="_blank" rel="noopener">https://www.jianshu.com/p/1eb41968c8e3</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件</a></p>
+<h2 id="1、DOM-事件的级别"><a href="#1、DOM-事件的级别" class="headerlink" title="1、DOM 事件的级别"></a>1、DOM 事件的级别</h2><p>DOM0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.onclick = function()&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DOM2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;&#125;,false)</span><br></pre></td></tr></table></figure>
+
+<p>DOM3<br>DOM3比DOM2多了一些事件类型，最后一个参数false表示事件在冒泡阶段触发，为true表示在捕获阶段触发。<br>注：IE只有冒泡阶段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;keyup&apos;,function()&#123;&#125;,false)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、DOM-事件模型"><a href="#2、DOM-事件模型" class="headerlink" title="2、DOM 事件模型"></a>2、DOM 事件模型</h2><p>捕获和冒泡，IE只有冒泡</p>
+<h2 id="3、DOM-事件流"><a href="#3、DOM-事件流" class="headerlink" title="3、DOM 事件流"></a>3、DOM 事件流</h2><p>捕获阶段–&gt;目标元素阶段–&gt;冒泡阶段</p>
+<h2 id="4、描述DOM-事件捕获的具体流程"><a href="#4、描述DOM-事件捕获的具体流程" class="headerlink" title="4、描述DOM 事件捕获的具体流程"></a>4、描述DOM 事件捕获的具体流程</h2><p>点击页面上一个元素时，捕获流程为window–&gt;document–&gt;html–&gt;body–&gt;父元素–&gt;子元素<br>冒泡过程则相反，由内层元素向外层元素传播</p>
+<h2 id="5、event对象的常见应用"><a href="#5、event对象的常见应用" class="headerlink" title="5、event对象的常见应用"></a>5、event对象的常见应用</h2><ul>
+<li>event.stopPropagation()</li>
+<li>event.preventDefault()</li>
+<li>event.currentTarget</li>
+<li>event.target</li>
+<li>event.stopImmediatePropagation()</li>
+</ul>
+<h2 id="6、自定义事件"><a href="#6、自定义事件" class="headerlink" title="6、自定义事件"></a>6、自定义事件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var eve = new Event(&apos;custome&apos;);</span><br><span class="line">ele.addEventLister(&apos;custome&apos;,function()&#123;</span><br><span class="line">  console.info(&apos;custome&apos;);</span><br><span class="line">&#125;);</span><br><span class="line">ele.dispatchEvent(eve);</span><br></pre></td></tr></table></figure>
+
+<p>todo:写个demo</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/20/DOM 事件/" data-id="cjxul00km0000wdlb7p5ethaj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css 盒模型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/20/css 盒模型/" class="article-date">
+  <time datetime="2019-06-20T15:17:03.748Z" itemprop="datePublished">2019-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/20/css 盒模型/">css grid 布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考博客：<a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html</a></p>
+<h1 id="网格布局"><a href="#网格布局" class="headerlink" title="网格布局"></a>网格布局</h1><p>flex布局相当于一维布局，grid相当于二维布局</p>
+<h1 id="容器和项目"><a href="#容器和项目" class="headerlink" title="容器和项目"></a>容器和项目</h1><pre><code>容器指采用网格布局的区域，可以理解为父元素，项目指父元素内的顶层子元素</code></pre><h1 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h1><h4 id="1、display属性，可设置的值为grid，inline-grid"><a href="#1、display属性，可设置的值为grid，inline-grid" class="headerlink" title="1、display属性，可设置的值为grid，inline-grid"></a>1、display属性，可设置的值为grid，inline-grid</h4><pre><code>注意，设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。</code></pre><h4 id="2、grid-template-columns-属性，grid-template-rows-属性"><a href="#2、grid-template-columns-属性，grid-template-rows-属性" class="headerlink" title="2、grid-template-columns 属性，grid-template-rows 属性"></a>2、grid-template-columns 属性，grid-template-rows 属性</h4><pre><code>grid-template-columns 属性定义每一列的列宽，
+grid-template-rows 属性定义每一行的行高</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 100px 100px 100px;</span><br><span class="line">  grid-template-rows: 100px 100px 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者是用百分比</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 33.33% 33.33% 33.33%;</span><br><span class="line">  grid-template-rows: 33.33% 33.33% 33.33%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h5><p>1、repeat函数可以简化重复的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: repeat(3, 33.33%);</span><br><span class="line">  grid-template-rows: repeat(3, 33.33%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>repeat()接受两个参数，第一个参数是重复的次数（上例是3），第二个参数是所要重复的值。<br>repeat()重复某种模式也是可以的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">grid-template-columns: repeat(2, 100px 20px 80px);</span><br></pre></td></tr></table></figure>
+
+<p>2、auto-fill自动填充</p>
+<p>当容器大小不确定，单元格大小是固定时使用，每一行会自动容纳尽可能多的单元格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: repeat(auto-fill, 100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码表示每列宽度100px，然后自动填充，直到容器不能放置更多的列</p>
+<p>3、fr关键字（fraction片段）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 1fr 1fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码表示两个相同宽度的列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 150px 1fr 2fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码表示 第一列宽度为150px ，第二列宽度是第三列宽度的一半。</p>
+<p>4、minmax函数</p>
+<p>minmax函数接收两个参数，分别为最小值和最大值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-columns: 1fr 1fr minmax(100px, 1fr);</span><br></pre></td></tr></table></figure>
+
+<p>上述代码minmax(100px, 1fr)表示列宽不小于 100px，不大于1fr</p>
+<p>5、auto关键字</p>
+<p>auto 关键字表示由浏览器自己决定长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-columns: 100px auto 100px;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，第二列的宽度，基本上等于该列单元格的最大宽度，除非单元格内容设置了min-width，且这个值大于最大宽度。</p>
+<p>6、网线格的名称</p>
+<p>grid-template-columns属性和grid-template-rows属性里面，还可以使用方括号，指定每一根网格线的名字，方便以后的引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];</span><br><span class="line">  grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码指定网格布局为3行 x 3列，因此有4根垂直网格线和4根水平网格线。方括号里面依次是这八根线的名字。<br>网格布局允许同一根线有多个名字，比如[fifth-line row-5]。</p>
+<p>7、布局实例<br>grid-template-columns属性对于网页布局非常有用。两栏式布局只需要一行代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 70% 30%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码将左边栏设为70%，右边栏设为30%。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-columns: repeat(12, 1fr);</span><br></pre></td></tr></table></figure>
+
+<p>十二网格布局</p>
+<h4 id="3、grid-row-rap-grid-column-grid-gap-属性"><a href="#3、grid-row-rap-grid-column-grid-gap-属性" class="headerlink" title="3、grid-row-rap,grid-column,grid-gap 属性"></a>3、grid-row-rap,grid-column,grid-gap 属性</h4><p>grid-row属性设置行与行的间隔（行间距），grid-column-gap属性设置列与列的间隔（列间距）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  grid-row-gap: 20px;</span><br><span class="line">  grid-column-gap: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，grid-row-gap用于设置行间距，grid-column-gap用于设置列间距</p>
+<p>grid-gap属性是grid-column-gap和grid-row-gap的合并简写形式，语法如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-gap: &lt;grid-row-gap&gt; &lt;grid-column-gap&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码等同于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  grid-gap: 20px 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果grid-gap省略了第二个值，浏览器认为第二个值等于第一个值。</p>
+<p>根据最新标准，上面三个属性名的grid-前缀已经删除，grid-column-gap和grid-row-gap写成column-gap和row-gap，grid-gap写成gap。</p>
+<h4 id="4、grid-template-areas属性"><a href="#4、grid-template-areas属性" class="headerlink" title="4、grid-template-areas属性"></a>4、grid-template-areas属性</h4><p>网格布局允许制定”区域“，一个区域由单个或者多个单元格组成，该属性用于定义区域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: 100px 100px 100px;</span><br><span class="line">  grid-template-rows: 100px 100px 100px;</span><br><span class="line">  grid-template-areas: &apos;a b c&apos;</span><br><span class="line">                       &apos;d e f&apos;</span><br><span class="line">                       &apos;g h i&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码先划分出9个单元格，然后将其定名为a到i的九个区域，分别对应这九个单元格。</p>
+<p>多个单元格合并成一个区域的写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: &apos;a a a&apos;</span><br><span class="line">                     &apos;b b b&apos;</span><br><span class="line">                     &apos;c c c&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码将9个单元格分成a、b、c三个区域。</p>
+<p>下面是一个布局实例,顶部是页眉区域header，底部是页脚区域footer，中间部分则为main和sidebar。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: &quot;header header header&quot;</span><br><span class="line">                     &quot;main main sidebar&quot;</span><br><span class="line">                     &quot;footer footer footer&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>如果某些区域不需要利用，则使用”点”（.）表示,表示没有用到该单元格，该单元格不属于任何区域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">grid-template-areas: &apos;a . c&apos;</span><br><span class="line">                     &apos;d . f&apos;</span><br><span class="line">                     &apos;g . i&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。<br>比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。</p>
+<h4 id="5、grid-auto-flow-属性，设置元素的排列顺序"><a href="#5、grid-auto-flow-属性，设置元素的排列顺序" class="headerlink" title="5、grid-auto-flow 属性，设置元素的排列顺序"></a>5、grid-auto-flow 属性，设置元素的排列顺序</h4><p>默认的放置顺序是“先行后列”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grid-auto-flow: row;  //先行后列</span><br><span class="line">grid-auto-flow: column;   //先列后行</span><br></pre></td></tr></table></figure>
+
+<p>如下表示”先行后列”，并且尽可能紧密填满，尽量不出现空格。</p>
+<p>grid-auto-flow: row dense;</p>
+<h1 id="项目元素的属性"><a href="#项目元素的属性" class="headerlink" title="项目元素的属性"></a>项目元素的属性</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/20/css 盒模型/" data-id="cjxul00kq0001wdlbqyfowtrk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,7 +483,7 @@ grid-template-rows 属性定义每一行的行高</code></pre><figure class="hig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/20/es6 笔记/" data-id="cjxuicjv10002jplb77lwrlqa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/20/es6 笔记/" data-id="cjxukvgb70002v4lble9rcqss" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +532,7 @@ grid-template-rows 属性定义每一行的行高</code></pre><figure class="hig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/20/hello-world/" data-id="cjxuicjv20003jplbwod1fdkj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/20/hello-world/" data-id="cjxukvgb90003v4lboekqecii" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +560,7 @@ grid-template-rows 属性定义每一行的行高</code></pre><figure class="hig
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
     </div>
   </div>
 
@@ -361,6 +573,10 @@ grid-template-rows 属性定义每一行的行高</code></pre><figure class="hig
       <ul>
         
           <li>
+            <a href="/2019/07/08/js原型链/">css 盒模型</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/20/css的BFC布局/">css BFC 模式</a>
           </li>
         
@@ -369,11 +585,11 @@ grid-template-rows 属性定义每一行的行高</code></pre><figure class="hig
           </li>
         
           <li>
-            <a href="/2019/06/20/es6 笔记/">es6 笔记</a>
+            <a href="/2019/06/20/DOM 事件/">DOM 事件</a>
           </li>
         
           <li>
-            <a href="/2019/06/20/hello-world/">Hello World</a>
+            <a href="/2019/06/20/css 盒模型/">css grid 布局</a>
           </li>
         
       </ul>

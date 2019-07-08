@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>DOM 事件 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DOM事件参考博客：https://www.jianshu.com/p/1eb41968c8e3https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件 1、DOM 事件的级别DOM0 1element.onclick = function()&amp;#123;&amp;#125;  DOM2 1element.addEventListener(&amp;apo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM 事件">
+<meta property="og:url" content="http://yoursite.com/2019/06/20/DOM 事件/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="DOM事件参考博客：https://www.jianshu.com/p/1eb41968c8e3https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件 1、DOM 事件的级别DOM0 1element.onclick = function()&amp;#123;&amp;#125;  DOM2 1element.addEventListener(&amp;apo">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-08T16:08:20.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DOM 事件">
+<meta name="twitter:description" content="DOM事件参考博客：https://www.jianshu.com/p/1eb41968c8e3https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件 1、DOM 事件的级别DOM0 1element.onclick = function()&amp;#123;&amp;#125;  DOM2 1element.addEventListener(&amp;apo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-DOM 事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/20/DOM 事件/" class="article-date">
+  <time datetime="2019-06-20T15:17:03.748Z" itemprop="datePublished">2019-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      DOM 事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><p>参考博客：<a href="https://www.jianshu.com/p/1eb41968c8e3" target="_blank" rel="noopener">https://www.jianshu.com/p/1eb41968c8e3</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Events#标准事件</a></p>
+<h2 id="1、DOM-事件的级别"><a href="#1、DOM-事件的级别" class="headerlink" title="1、DOM 事件的级别"></a>1、DOM 事件的级别</h2><p>DOM0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.onclick = function()&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>DOM2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;click&apos;,function()&#123;&#125;,false)</span><br></pre></td></tr></table></figure>
+
+<p>DOM3<br>DOM3比DOM2多了一些事件类型，最后一个参数false表示事件在冒泡阶段触发，为true表示在捕获阶段触发。<br>注：IE只有冒泡阶段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(&apos;keyup&apos;,function()&#123;&#125;,false)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、DOM-事件模型"><a href="#2、DOM-事件模型" class="headerlink" title="2、DOM 事件模型"></a>2、DOM 事件模型</h2><p>捕获和冒泡，IE只有冒泡</p>
+<h2 id="3、DOM-事件流"><a href="#3、DOM-事件流" class="headerlink" title="3、DOM 事件流"></a>3、DOM 事件流</h2><p>捕获阶段–&gt;目标元素阶段–&gt;冒泡阶段</p>
+<h2 id="4、描述DOM-事件捕获的具体流程"><a href="#4、描述DOM-事件捕获的具体流程" class="headerlink" title="4、描述DOM 事件捕获的具体流程"></a>4、描述DOM 事件捕获的具体流程</h2><p>点击页面上一个元素时，捕获流程为window–&gt;document–&gt;html–&gt;body–&gt;父元素–&gt;子元素<br>冒泡过程则相反，由内层元素向外层元素传播</p>
+<h2 id="5、event对象的常见应用"><a href="#5、event对象的常见应用" class="headerlink" title="5、event对象的常见应用"></a>5、event对象的常见应用</h2><ul>
+<li>event.stopPropagation()</li>
+<li>event.preventDefault()</li>
+<li>event.currentTarget</li>
+<li>event.target</li>
+<li>event.stopImmediatePropagation()</li>
+</ul>
+<h2 id="6、自定义事件"><a href="#6、自定义事件" class="headerlink" title="6、自定义事件"></a>6、自定义事件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var eve = new Event(&apos;custome&apos;);</span><br><span class="line">ele.addEventLister(&apos;custome&apos;,function()&#123;</span><br><span class="line">  console.info(&apos;custome&apos;);</span><br><span class="line">&#125;);</span><br><span class="line">ele.dispatchEvent(eve);</span><br></pre></td></tr></table></figure>
+
+<p>todo:写个demo</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/20/DOM 事件/" data-id="cjxul00km0000wdlb7p5ethaj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/20/css网格布局/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css grid 布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/20/css 盒模型/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css grid 布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/08/js原型链/">css 盒模型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/css的BFC布局/">css BFC 模式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/css网格布局/">css grid 布局</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/DOM 事件/">DOM 事件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/css 盒模型/">css grid 布局</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
